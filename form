@@ -1,0 +1,127 @@
+tout en gardant les bases solides ameliore le style pour un projet pro lié à la santé !  <!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Inscription thérapeutes</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            background: url('{{ asset('images/1.jpg') }}') no-repeat center center fixed;
+            background-size: cover;
+        }
+
+        /* Flou sur l'image de fond */
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            backdrop-filter: blur(10px);
+            background-color: rgba(255, 255, 255, 0.3);
+            z-index: -1;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: rgba(255, 255, 255, 0.95);
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0,0,0,0.1);
+        }
+
+        .row {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 15px;
+        }
+
+        .row input, .row textarea {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+        }
+
+        .checkboxes {
+            margin-top: 10px;
+        }
+
+        button {
+            padding: 10px 20px;
+            border: none;
+            background-color: #4CAF50;
+            color: white;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        label {
+            font-weight: normal;
+        }
+    </style>
+</head>
+<body>
+
+<div class="container">
+    <h2>🧑‍⚕️ Inscription thérapeutes</h2>
+    <form action="submit.php" method="POST" enctype="multipart/form-data">
+
+        <div class="row">
+            <input type="email" name="email" placeholder="Email">
+            <input type="text" name="diplomes" placeholder="Diplômes">
+        </div>
+
+        <div class="row">
+            <input type="text" name="nom" placeholder="Nom">
+            <input type="text" name="experience" placeholder="Années expériences">
+        </div>
+
+        <div class="row">
+            <input type="text" name="prenom" placeholder="Prénom">
+            <input type="text" name="consultation" placeholder="Mode de consultation">
+        </div>
+
+        <div class="row">
+            <input type="text" name="telephone" placeholder="Téléphone">
+            <input type="text" name="tarif" placeholder="Tarif">
+        </div>
+
+        <div class="row">
+            <input type="password" name="password" placeholder="Mot de passe">
+            <input type="text" name="specialites" placeholder="Spécialités">
+        </div>
+
+        <div class="row">
+            <input type="password" name="confirm_password" placeholder="Confirmation mot de passe">
+            <input type="text" name="adresse" placeholder="Adresse du cabinet">
+        </div>
+
+        <div class="row">
+            <textarea name="description" placeholder="Description"></textarea>
+        </div>
+
+        <div class="row">
+            <label>Télécharger photo de profil :</label>
+            <input type="file" name="photo">
+        </div>
+
+        <div class="checkboxes">
+            <label><input type="checkbox" name="certifie"> Je confirme être un professionnel certifié et j’accepte les conditions générales d’utilisation.</label><br>
+            <label><input type="checkbox" name="exactitude"> J’atteste de l’exactitude des informations fournies.</label>
+        </div>
+
+        <p>J’ai déjà un compte</p>
+        <button type="submit">M’inscrire</button>
+    </form>
+</div>
+
+</body>
+</html>
